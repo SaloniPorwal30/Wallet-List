@@ -4,7 +4,9 @@ require("dotenv").config();
 
 async function main() {
   const contractAddress = "0x7BC56F8aD67e60b13878D27B74F344e44E71A021";
-  const provider = new ethers.WebSocketProvider(process.env.ALCHEMY_WEBSOCKET);
+  const provider = new ethers.WebSocketProvider(
+    process.env.ALCHEMY_WEBSOCKET_KEY
+  );
 
   const contract = new ethers.Contract(contractAddress, walletABI, provider);
 
